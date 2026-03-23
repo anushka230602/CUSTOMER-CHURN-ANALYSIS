@@ -1,100 +1,98 @@
-#  End-to-end churn analysis using Python with business-focused insights and retention strategy (Python + Power BI)
+# End-to-end churn analysis using Python with feature engineering, customer segmentation, and a rule-based retention strategy to reduce revenue loss.
+
 ## Overview
 
+This project performs an end-to-end analysis of customer churn using the IBM Telco dataset (~7,043 customers, 21 features).
 
-This project performs an end-to-end analysis of customer churn using the IBM Telco dataset, with a primary focus on Python-based data analysis, feature engineering, and business logic development.
+The focus is on Python-driven analysis to identify churn drivers, high-risk segments, and revenue at risk, followed by a business-oriented retention strategy, with insights visualized in Power BI.
 
-The project identifies key churn drivers, high-risk customer segments, and revenue at risk, and implements a rule-based retention strategy framework, with insights visualized through a Power BI dashboard.
+📸 Dashboard Preview
+## 📸 Dashboard Preview
+
+![Dashboard Overview](images/executive_summary.png)
+![Lifecycle Analysis](images/financial_impact.png)
+
+
 
 ## Objective
-- Analyze customer churn using Python
-- Perform feature engineering to uncover behavioral patterns
-- Identify high-risk customer segments
-- Quantify revenue impact
-- Design actionable retention strategies
-
+- Identify key factors driving customer churn
+- Segment customers based on risk and value
+- Quantify financial impact of churn
+- Build actionable retention strategies
+  
 ## Tools & Technologies
-- Python – Data analysis and logic building
+- Python – Data analysis, feature engineering, logic building
 - Libraries – Pandas, NumPy, Matplotlib, Seaborn
-- Power BI – Dashboard visualization
-
- ## Dataset
+- Power BI – Dashboard and business visualization
+  
+## Dataset
 - Source: IBM Telco Customer Churn Dataset
-- Records: ~7,000 customers
-- Features: Demographics, services, billing, tenure, and churn status
+- Customers: 7,043
+- Features: 21 variables including services, billing, tenure, and churn
 
-## Python Analysis
-🔹 Data Cleaning
-- Handled missing values in TotalCharges
-- Converted data types for numerical analysis
+## Python Analysis (Core)
+### Data Cleaning
+- Handled missing values in TotalCharges (~11 records)
+- Converted data types for numerical consistency
 - Standardized categorical variables
-🔹 Exploratory Data Analysis (EDA)
-- Analyzed churn distribution across contract types, tenure, and services
-- Identified early churn trends and high-risk segments
-- Visualized patterns using Matplotlib and Seaborn
-🔹 Feature Engineering
-- num_services → Total services subscribed per customer (engagement metric)
-- High Value Customers → Identified using monthly charges threshold
-- Tenure Groups → Segmented customers by lifecycle stage
-- Customer Segments → Combined churn and value classification
-🔹 Action Framework (Key Highlight)
-
-Implemented a rule-based retention strategy:
+### Exploratory Analysis
+- Overall churn rate: ~26.5%
+- Highest churn observed in month-to-month contracts (~40%+)
+- Early tenure customers (<6 months) show significantly higher churn
+### Feature Engineering
+- num_services → Customer engagement metric
+- High Value Customers → Top ~30% based on monthly charges
+- Tenure Groups → Lifecycle segmentation
+- Customer Segments → Value × Churn classification
+### Action Framework 
+A rule-based retention model was developed:
 
 - High-value customers → VIP Support
-- Early tenure customers → Onboarding Engagement
-- Month-to-month customers → Contract Conversion Offers
-- Low engagement customers → Service Bundling
-- Customers without tech support → Support Upsell
-
-## Key Insights
-- Month-to-month contracts have the highest churn rates
-- Customers within the first 6 months are most likely to churn
-- Low service adoption strongly increases churn probability
-- High-value customers contribute the most to revenue loss
-- Lack of tech support is strongly associated with churn
+- Early tenure (<6 months) → Onboarding Engagement
+- Month-to-month → Contract Conversion Offers
+- Low engagement (≤2 services) → Service Bundling
+- No tech support → Support Upsell
+  
+## Key Results
+- ~26.5% overall churn rate
+- Month-to-month customers contribute the majority of churn
+- Customers with ≤2 services show significantly higher churn risk
+- High-value customers account for a disproportionate share of revenue at risk
+- Lack of tech support strongly correlates with churn
 
 ## Power BI Dashboard
 
-A 4-page interactive dashboard was created to present insights:
+A 4-page dashboard was built to translate analysis into business insights:
 
 - Executive Summary
 - Customer Lifecycle Analysis
 - Churn Drivers
 - Financial Impact
+  _Focus: Converting Python analysis into decision-making insights_
 
-  ![Dashboard Overview](images/executive_summary.png)
-![Lifecycle Analysis](images/financial_impact.png)
+## Business Impact
+This analysis enables:
+
+- Identification of high-risk, high-value customers
+- Reduction of churn through targeted interventions
+- Protection of revenue streams in subscription-based businesses
+
+_Applicable to telecom, SaaS, and subscription models_
 
 ## Repository Structure
-Customer-Churn-Analysis
- ┣ telco_analysis.ipynb
- ┣ dashboard.pbix
- ┣ images/
- ┗ README.md
+customer-churn-analysis/
+│
+├── README.md
+├── telco_analysis.ipynb
+├── dashboard.pbix
+├── images/
 
- ## How to Use
-- Run the Jupyter Notebook to explore the analysis
-- Open the .pbix file in Power BI Desktop to view the dashboard
+## How to Use
+- Run the Jupyter Notebook to explore analysis
+- Open the .pbix file in Power BI Desktop
+- Interact with filters to explore segments
 
- ## Business Impact
-
-This project demonstrates how Python-driven analysis can:
-
-- Identify churn drivers
-- Segment customers effectively
-- Enable targeted retention strategies
-- Quantify revenue risk
-
- ## Key Learnings
-- Feature engineering for behavioral analysis
-- Translating data into actionable insights
-- Combining Python analysis with business-focused visualization
-
-## Final Note
-
-This project highlights the use of Python not just for analysis, but for:
-
-Building business logic
-Creating actionable frameworks
-Driving data-informed decision making
+## Key Learnings
+- Feature engineering for behavioral segmentation
+- Translating data into actionable business insights
+- Combining Python analysis with business dashboards
