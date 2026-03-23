@@ -6,8 +6,8 @@ This project performs an end-to-end analysis of customer churn using the IBM Tel
 
 The focus is on Python-driven analysis to identify churn drivers, high-risk segments, and revenue at risk, followed by a business-oriented retention strategy, with insights visualized in Power BI.
 
-📸 Dashboard Preview
-## 📸 Dashboard Preview
+ Dashboard Preview
+##  Dashboard Preview
 
 ![Dashboard Overview](images/executive_summary.png)
 ![Lifecycle Analysis](images/financial_impact.png)
