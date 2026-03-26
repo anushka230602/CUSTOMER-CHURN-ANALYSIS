@@ -39,6 +39,9 @@ The focus is on Python-driven analysis to identify churn drivers, high-risk segm
 - Overall churn rate: ~26.5%
 - Highest churn observed in month-to-month contracts (~40%+)
 - Early tenure customers (<6 months) show significantly higher churn
+
+![churn Overview](images/correlation_heatmap.png)
+  
 ### Feature Engineering
 - num_services → Customer engagement metric
 - High Value Customers → Top ~30% based on monthly charges
